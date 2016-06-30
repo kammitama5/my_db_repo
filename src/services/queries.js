@@ -7,11 +7,13 @@ var db = new sqlite3.Database(file);
 
 function queries() {
   function selectBooksAuthors(cb) {
-    cb(undefined, []);
+    var sql = "SELECT * from authors JOIN books ON authors.id = books.author_id";
+    db.all(sql, cb)
   }
 
   function insertBook(data, cb) {
-    cb(undefined, '');
+    var sql = "INSERT into books(title, author_id) VALUES(?, ?)";
+    db.run(sql, data.title, data.authorId);
   }
 
   function selectBooks(cb) {
