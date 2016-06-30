@@ -50,8 +50,9 @@ function queries() {
     db.run(sql, data.firstname, data.lastname, data.authorId);
   }
 
-  function deleteAuthor(data, cb) {
-    cb(undefined, '');
+  function deleteAuthor(data) {
+    var sql = "DELETE from authors WHERE id =?";
+    db.run(sql, data.authorId);
   }
 
 
