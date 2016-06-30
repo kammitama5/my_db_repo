@@ -45,8 +45,9 @@ function queries() {
     db.get(sql, data.authorId, cb);
   }
 
-  function editAuthor(data, cb) {
-    cb(undefined, '');
+  function editAuthor(data) {
+    var sql = "UPDATE authors SET firstname=?, lastname=? WHERE id=?";
+    db.run(sql, data.firstname, data.lastname, data.authorId);
   }
 
   function deleteAuthor(data, cb) {
