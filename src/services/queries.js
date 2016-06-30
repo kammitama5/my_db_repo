@@ -16,9 +16,9 @@ function queries() {
     db.run(sql, data.title, data.authorId);
   }
 
-  function selectBooks(cb) {
-    cb(undefined, {});
-  }
+  // function selectBooks(cb) {
+  //   cb(undefined, {});
+  // }
 
   function selectBook(data, cb) {
     cb(undefined, {});
